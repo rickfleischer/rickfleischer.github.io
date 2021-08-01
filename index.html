@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="robots" content="noindex" />
+    <title>Insights</title>
+    <script>
+        function rowForAudio(description,fileName) {
+            return `
+            <tr>
+                <td align="right">
+                    ${description}
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="Naturally Thin/${fileName}.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>    
+                </td>
+            </tr>`;
+        }        
+        function table(){
+            return `
+            <table>
+            ${rowForAudio("Introduction", "Intro")}
+            ${rowForAudio("What you can expect", "Expect")}
+            ${rowForAudio("Listen every day", "Daily")}
+            ${rowForAudio("Session 1", "week1")}
+            ${rowForAudio("Session 2", "week2")}
+            ${rowForAudio("Session 3", "week3")}
+            ${rowForAudio("Session 4", "week4")}
+            ${rowForAudio("Session 5", "week5")}
+            ${rowForAudio("Session 6", "week6")}
+            </table>`;
+        }        
+        function dafunc(){
+            const myHeading = document.querySelector('table');
+            myHeading.innerHTML = table();}
+    </script>
+</head>
+<body>
+    <table>
+    </table>
+    <script>dafunc()</script>
+</body>
